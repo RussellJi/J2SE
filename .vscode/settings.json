@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "liao/array/src/stringargs",
-        "liao/array/src/sort"
+        "liao/array/src/sort",
+        "liao/oop/src/cast"
     ]
 }
