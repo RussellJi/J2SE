@@ -1,4 +1,4 @@
-package cast;
+package com.oop.cast;
 class Student extends Person{
     Student(String name) {
         super(name);

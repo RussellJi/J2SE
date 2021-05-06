@@ -1,4 +1,4 @@
-package cast;
+package com.oop.cast;
 class Person {
     private String name;
     Person(String name){
