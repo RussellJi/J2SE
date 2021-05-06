@@ -16,6 +16,7 @@ public class Cmd {
         }
         int [] arr2 = {1,3,5,2,6};
         // 若要使用另一个包中的类和函数，则该类和函数必须为public类型
+        // com.array.sort.BubbleSort.sort_up(arr2);  // 可以写包名+函数名进行引用
         BubbleSort.sort_up(arr2);
         System.out.println(Arrays.toString(arr2));
     }
