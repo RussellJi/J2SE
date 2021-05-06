@@ -1,3 +1,4 @@
+package cast;
 class Person {
     private String name;
     Person(String name){

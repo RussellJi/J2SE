@@ -1,15 +1,16 @@
-public class Circle extends Type {
-    // 圆的构造方法：为perimeter和area赋值
-    static final Double PI = 3.14;
+package com.java.home;
+
+public class Rectangle extends Type {
+
     private double perimeter;  //周长
     private double area;       //面积
-    Circle(double r){
+    Rectangle(double a, double b){
         // 如果半径大于等于0，再继续执行
-        if(r >= 0){
-            this.perimeter = 2*PI*r;
-            this.area = PI*r*r;
+        if(a >= 0 && b >=0){
+            this.perimeter = 2*(a + b);
+            this.area = a * b;
         }else{
-            System.out.println("半径必须非负！");
+            System.out.println("边长必须非负！");
             throw new IllegalArgumentException();
         }
     }

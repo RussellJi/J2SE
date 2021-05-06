@@ -1,7 +1,9 @@
+package com.java.home;
+
 public class Test {
     public static void main(String args[]){
         try{
-            Circle c1 = new Circle(-2);
+            Circle c1 = new Circle(4);
             System.out.println("c1的面积为："+c1.getArea());
             System.out.println("c1的周长为："+c1.getPerimeter());
         }catch(IllegalArgumentException e){
@@ -9,7 +11,7 @@ public class Test {
         }
 
         try {
-            Triangle t2 = new Triangle(1,2,4);
+            Triangle t2 = new Triangle(5,6,4);
             System.out.println("t1的面积为："+t2.getArea());
             System.out.println("t1的周长为："+t2.getPerimeter());
         } catch (IllegalArgumentException e) {

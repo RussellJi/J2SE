@@ -1,3 +1,4 @@
+package com.java.home;
 abstract class Type{
     /**抽象类 Type
      * 属性：
