@@ -5,6 +5,7 @@ public class Main {
         //downcasting
         if (p1 instanceof Student){
             Student ss = (Student)p1;
+            System.out.println(ss.hashCode());
         }
 
         Student s1 = new Student("jhh");
