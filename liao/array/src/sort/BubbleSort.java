@@ -1,16 +1,15 @@
-package sort;
 import java.util.Arrays;
 /**
  * 冒泡排序
  * 
  */
-public class BubbleSort{
+class BubbleSort{
 
     /**
      * 冒泡排序：升序
      * @param arr 
      */
-    public static void sort_up(int [] arr){
+    static void sort_up(int [] arr){
         for(int i=0; i<arr.length-1; i++){
             for(int j=0; j<arr.length-1-i; j++){
                 if(arr[j] > arr[j+1]){
