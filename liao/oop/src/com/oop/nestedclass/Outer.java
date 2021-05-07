@@ -8,9 +8,13 @@ class Outer{
         }
         
     }
+
+    /**
+     * static nested class can only get static field and  method
+     */
     static class StaticNested{
         void output(){
-            System.out.println("private:"+NAME);
+            System.out.println("private static:"+NAME);
         }
     }
 
