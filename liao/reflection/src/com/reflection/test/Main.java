@@ -112,7 +112,7 @@ public class Main{
         Sports sp = new Bskt();
         sp.hello();
 
-        //动态代理 通过proxy创建代理对象，将接口方法代理给InvocationHandler完成
+        //动态代理 运行期动态创建代理类完成接口的实例化；通过proxy创建代理对象，将接口方法代理给InvocationHandler完成
         InvocationHandler handler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
