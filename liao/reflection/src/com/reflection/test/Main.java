@@ -112,7 +112,7 @@ public class Main{
         Sports sp = new Bskt();
         sp.hello();
 
-        //动态代理
+        //动态代理 通过proxy创建代理对象，将接口方法代理给InvocationHandler完成
         InvocationHandler handler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -125,9 +125,10 @@ public class Main{
             }
         };
         Sports sp2 = (Sports) Proxy.newProxyInstance(
-            Sports.class.getClassLoader(), // 传入ClassLoader
-            new Class[] { Sports.class }, // 传入要实现的接口
+            Sports.class.getClassLoader(), // 传入ClassLoader，接口类的ClassLoader
+            new Class[] { Sports.class }, // 传入要实现的接口数组
             handler); // 传入处理调用方法的InvocationHandler
+        // 通过代理类创建实现接口并调用方法
         sp2.hello();
     }
 
