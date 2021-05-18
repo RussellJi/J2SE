@@ -13,7 +13,7 @@ class Pair<T>{
     T getLastname(){
         return this.lastname;
     }
-    static Pair<T> create(T firstname,T lastname) {
-        return new Pair<T>(T firstname,T lastname);
+    static <K>Pair<K> create(K firstname,K lastname) {
+        return new Pair<K>(firstname,lastname);
     }
 }
