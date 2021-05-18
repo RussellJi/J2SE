@@ -1,4 +1,4 @@
-package com.java.home;
+package han.home;
 import java.lang.Math;
 class Triangle extends Type {
 

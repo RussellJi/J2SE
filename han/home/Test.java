@@ -1,4 +1,4 @@
-package com.java.home;
+package han.home;
 
 public class Test {
     public static void main(String args[]){

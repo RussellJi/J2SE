@@ -1,4 +1,4 @@
-package com.java.home;
+package han.home;
 abstract class Type{
     /**抽象类 Type
      * 属性：
