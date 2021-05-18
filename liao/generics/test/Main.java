@@ -4,6 +4,13 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.StringJoiner;
 
+
+/**
+ * ParameterizedType：参数化类型，如泛型
+ * TypeVariable：T,K
+ * GenericArrayType：含有泛型的数组
+ * WildcardType：含有通配符的泛型
+ */
 public class Main {
     public static void main(String[]args){
         Pair<String> p_s = new Pair<>("ji","haohan");
