@@ -1,4 +1,4 @@
-package src.com.hidee;
+package exceptions.hidee;
 public class Main {
     public static void main(String[] args){
         //保留案发现场

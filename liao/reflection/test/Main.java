@@ -1,5 +1,4 @@
-package com.reflection.test;
-import java.lang.reflect.Array;
+package reflection.test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
@@ -28,7 +27,7 @@ public class Main{
         Person p1 = new Person("小明");
         Class p = Person.class;
         Class p2 = p1.getClass();
-        Class p3 = Class.forName("com.reflection.test.Person");
+        Class p3 = Class.forName("reflection.test.Person");
 
         System.out.println(p.getName());
         System.out.println(p2.getName());

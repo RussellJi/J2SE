@@ -1,6 +1,6 @@
-package com.array.stringargs;
+package array.stringargs;
 import java.util.Arrays;
-import com.array.sort.*;
+import array.sort.*;
 /**
  * 先编译，在执行的时候追加参数，通过foreach 可以捕获参数，如何解析参数需要程序自定义。
  * 

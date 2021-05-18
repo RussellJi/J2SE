@@ -1,4 +1,4 @@
-package com.array.sort;
+package array.sort;
 import java.util.Arrays;
 /**
  * 冒泡排序

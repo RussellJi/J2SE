@@ -1,4 +1,4 @@
-package com.core.string;
+package oop.core.string;
 // 字符串不可变特性 由private final char[]决定
 
 
