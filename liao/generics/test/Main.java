@@ -1,4 +1,4 @@
-package general.test;
+package generics.test;
 
 import java.util.StringJoiner;
 
@@ -13,5 +13,9 @@ public class Main {
  
         System.out.println(p_i.getFirstname()+" "+p_i.getLastname()); 
 
+        Pair<String> p_z = Pair.create("zhang","shuman");
+        Pair<Object> p_zi = Pair.create(123,456);
+        System.out.println( p_z.getFirstname()+p_z.getLastname());
+        System.out.println( p_zi.getFirstname()+""+p_zi.getLastname());
     }
 } 

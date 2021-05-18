@@ -1,4 +1,4 @@
-package general.test;
+package generics.test;
 
 class Pair<T>{
     private T firstname;
