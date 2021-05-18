@@ -1,5 +1,7 @@
 package generics.test;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.StringJoiner;
 
 public class Main {
@@ -17,5 +19,18 @@ public class Main {
         Pair<Object> p_zi = Pair.create(123,456);
         System.out.println( p_z.getFirstname()+p_z.getLastname());
         System.out.println( p_zi.getFirstname()+""+p_zi.getLastname());
+
+        // 子类取得父类泛型类型 
+        Intpair ip = new Intpair(1,2);
+        Class c_ip = ip.getClass();
+        Type t = c_ip.getGenericSuperclass();
+        if(t instanceof ParameterizedType){
+            ParameterizedType pt = (ParameterizedType)t;
+            Type[] types = pt.getActualTypeArguments();
+            Type firstType = types[0];
+            Class<?> typeClass = (Class<?>)firstType;
+            System.out.println(typeClass);
+            
+        }
     }
 } 
