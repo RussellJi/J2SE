@@ -17,18 +17,19 @@ public class ListExercise {
 
         System.out.println(list1);
 
-        // 冒泡排序
-        for(int i = 0; i<list1.size()-1; i++){
-            for(int j = 0; j<list1.size()-1-i; j++){
-                int p1 = ((Book) list1.get(j)).getPrice();
-                int p2 = ((Book) list1.get(j+1)).getPrice();
-                if(p1 > p2){
-                    Object temp = list1.get(j+1);
-                    list1.set(j+1,list1.get(j));
-                    list1.set(j, temp);
-                }
-            }
-        }
+        // // 冒泡排序
+        // for(int i = 0; i<list1.size()-1; i++){
+        //     for(int j = 0; j<list1.size()-1-i; j++){
+        //         int p1 = ((Book) list1.get(j)).getPrice();
+        //         int p2 = ((Book) list1.get(j+1)).getPrice();
+        //         if(p1 > p2){
+        //             Object temp = list1.get(j+1);
+        //             list1.set(j+1,list1.get(j));
+        //             list1.set(j, temp);
+        //         }
+        //     }
+        // }
+        sort(list1);
         System.out.println("list1:"+list1);
 
         list2.add(new Book("骆驼祥子",50,"老舍"));
@@ -37,22 +38,36 @@ public class ListExercise {
 
         System.out.println(list2);
 
-        // 冒泡排序
-        for(int i = 0; i<list2.size()-1; i++){
-            for(int j = 0; j<list2.size()-1-i; j++){
-                int p1 = ((Book) list2.get(j)).getPrice();
-                int p2 = ((Book) list2.get(j+1)).getPrice();
-                if(p1 > p2){
-                    Object temp = list2.get(j+1);
-                    list2.set(j+1,list2.get(j));
-                    list2.set(j, temp);
-                }
-            }
-        }
+        // // 冒泡排序
+        // for(int i = 0; i<list2.size()-1; i++){
+        //     for(int j = 0; j<list2.size()-1-i; j++){
+        //         int p1 = ((Book) list2.get(j)).getPrice();
+        //         int p2 = ((Book) list2.get(j+1)).getPrice();
+        //         if(p1 > p2){
+        //             Object temp = list2.get(j+1);
+        //             list2.set(j+1,list2.get(j));
+        //             list2.set(j, temp);
+        //         }
+        //     }
+        // }
+        sort(list2);
         System.out.println("list2:"+list2);
 
     }
-
+    @SuppressWarnings("all")
+    static void sort(List list){
+        int listsize = list.size();
+        for(int i = 0; i < listsize - 1; i++){
+            for(int j = 0; j < listsize - 1 - i; j++){
+                Book o = (Book)list.get(j);
+                Book o2 = (Book)list.get(j+1);
+                if(o.getPrice() > o2.getPrice()){
+                    list.set(j,o2);
+                    list.set(j+1,o);
+                }
+            }
+        }
+    }
 
 
 }
