@@ -9,7 +9,7 @@ import java.util.Iterator;
 // Collection接口的常用方法add remove isEmpty contains addAll removeAll clear
 // Collection接口实现了Iterable接口，可以使用iterator方法（迭代器），返回一个Iterator对象,通过next方法获取下一个元素
 // 增强for循环，其实就是简化版的迭代器
-public class Main {
+public class CollectionMethod {
     @SuppressWarnings("all")
     public static void main(String[] args) {
     
@@ -17,6 +17,7 @@ public class Main {
         Collection list2 = new ArrayList();
         // 添加单个元素
         list.add("纪浩瀚");
+        
         list.add(123);
         list.add("123");
         System.out.println("list:"+list);
