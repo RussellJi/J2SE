@@ -1,4 +1,4 @@
-package Collections.Collection.List.Exercise;
+package Collections.Collection.List.test;
 
 import java.util.ArrayList;
 import java.util.Iterator;

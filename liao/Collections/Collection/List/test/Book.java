@@ -1,5 +1,4 @@
-package Collections.Collection.List.Exercise;
-
+package Collections.Collection.List.test;
 public class Book {
     private String name;
     private int price;

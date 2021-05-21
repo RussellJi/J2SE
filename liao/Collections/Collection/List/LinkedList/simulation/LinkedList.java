@@ -1,4 +1,4 @@
-package Collections.Collection.List.LinkedList;
+package Collections.Collection.List.LinkedList.simulation;
 
 public class LinkedList {
     // 双向链表
