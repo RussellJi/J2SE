@@ -1,6 +1,7 @@
 package Collections.Collection.List.LinkedList;
 
 public class LinkedList {
+    // 双向链表
     Node first;
     Node last;
     // 内部类，pre，next，item
