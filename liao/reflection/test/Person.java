@@ -36,11 +36,12 @@ class Student extends Person{
 }
 
 interface Sports{
-    public void hello();
+  
+    public void hello(String str);
 }
 
 class Bskt implements Sports{
-    public void hello(){
-        System.out.println("basketball");
+    public void hello(String str){
+        System.out.println(str);
     }
 }

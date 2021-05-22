@@ -17,7 +17,7 @@ import java.util.StringJoiner;
  *  
  * JVM每次读到一个class，就将其加载到内存，每加载一个class，JVM都会为其创建一个Class的实例，并关联
  */
-
+@SuppressWarnings("all")
 public class Main{
     public static void main(String[] argv) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
         if(argv.length>0){
@@ -109,7 +109,7 @@ public class Main{
 
         //静态实现，接口只能通过向上转型实例化
         Sports sp = new Bskt();
-        sp.hello();
+        sp.hello("hello");
 
         //动态代理 运行期动态创建代理类完成接口的实例化；通过proxy创建代理对象，将接口方法代理给InvocationHandler完成
         InvocationHandler handler = new InvocationHandler() {
@@ -118,7 +118,8 @@ public class Main{
                 System.out.println(method);
                 if (method.getName().equals("hello")) {
                     // System.out.println(argv[0]);
-                    System.out.println("basketball");
+                    // System.out.println("basketball");
+                    System.out.println(args[0]);
                 }
                 return null;
             }
@@ -128,7 +129,7 @@ public class Main{
             new Class[] { Sports.class }, // 传入要实现的接口数组
             handler); // 传入处理调用方法的InvocationHandler
         // 通过代理类创建实现接口并调用方法
-        sp2.hello();
+        sp2.hello("bask");
     }
 
     static void create(String name){
