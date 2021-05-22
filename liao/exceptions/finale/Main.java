@@ -1,5 +1,6 @@
 package exceptions.finale;
 
+@SuppressWarnings("all")
 public class Main {
     public static void main(String[] args) throws Exception{
         Exception origin = null;
