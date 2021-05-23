@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LinkedHashSetSource",
+            "request": "launch",
+            "mainClass": "Collections_HSP.Collection.Set.HashSet.LinkedHashSet.source.LinkedHashSetSource",
+            "projectName": "liao_88970dbe"
+        },
+        {
+            "type": "java",
             "name": "Launch HashSetSource",
             "request": "launch",
             "mainClass": "Collections_HSP.Collection.Set.HashSet.source.HashSetSource",
