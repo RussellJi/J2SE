@@ -84,6 +84,8 @@ public class MapTest {
         System.out.println("-------6.iterator，entryset");
         while (it3.hasNext()){
             Map.Entry i = (Map.Entry)it3.next();
+            Object o = it3.next();
+            System.out.println(o.getClass());
             System.out.println(i.getKey()+"-"+i.getValue());
         }
     }  

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HashMapExerxice",
+            "request": "launch",
+            "mainClass": "Collections_HSP.Map.HashMap.HashMapExerxice",
+            "projectName": "liao_88970dbe"
+        },
+        {
+            "type": "java",
+            "name": "Launch MapExerxice",
+            "request": "launch",
+            "mainClass": "Collections_HSP.Map.test.MapExerxice",
+            "projectName": "liao_88970dbe"
+        },
+        {
+            "type": "java",
             "name": "Launch MapTest",
             "request": "launch",
             "mainClass": "Collections_HSP.Map.test.MapTest",
