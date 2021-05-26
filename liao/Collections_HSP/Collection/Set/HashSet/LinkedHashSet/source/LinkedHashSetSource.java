@@ -28,7 +28,7 @@ import java.util.LinkedHashSet;
         ......
         //若计算出的索引位置为空创建新结点
         tab[i] = newNode(hash, key, value, null);
-            //Node为HashMap的内部类，实现了Map.Entry<K,V>接口
+            
             static class Node<K,V> implements Map.Entry<K,V>{
                 Node(int hash, K key, V value, Node<K,V> next) {
                     this.hash = hash;
