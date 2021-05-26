@@ -25,6 +25,7 @@ public class LinkedListSource {
             System.out.println(it.next());
         }
 
+        // 尽量使用iterator，get方法每次会重新遍历链表，不要使用indexOf获取索引，当元素为null时，会遍历整个列表
         for(int i=0; i<list.size();i++){
             System.out.println(list.get(i));
         }
