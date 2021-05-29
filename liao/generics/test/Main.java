@@ -12,6 +12,7 @@ import java.util.StringJoiner;
  * WildcardType：含有通配符的泛型
  */
 public class Main {
+    @SuppressWarnings("all")
     public static void main(String[]args){
         Pair<String> p_s = new Pair<>("ji","haohan");
         StringJoiner sj = new StringJoiner(" ","Name:",".");
