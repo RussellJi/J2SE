@@ -1,6 +1,7 @@
 package oop.nestedclass;
 import java.util.HashMap;
 
+@SuppressWarnings("all")
 public class Main {
     public static void main(String[] args){
 
