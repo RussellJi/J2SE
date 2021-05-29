@@ -1,4 +1,4 @@
-package Collections.Collection.Set.HashSet.test;
+package Collections_HSP.Collection.Set.HashSet.test;
 
 import java.util.HashSet;
 

@@ -1,4 +1,4 @@
-package com.oop.nestedclass;
+package oop.nestedclass;
 class Outer{
     private String name = "outer";
     private static String NAME = "outer";

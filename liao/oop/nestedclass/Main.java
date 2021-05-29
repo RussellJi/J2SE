@@ -1,4 +1,4 @@
-package com.oop.nestedclass;
+package oop.nestedclass;
 import java.util.HashMap;
 
 public class Main {
