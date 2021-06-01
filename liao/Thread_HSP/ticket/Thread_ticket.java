@@ -46,6 +46,8 @@ class Thread_ticket02 extends Thread{
     
 }
 
+
+// 方法加锁
 class Thread_ticket03 implements Runnable{
     private int count = 30;
     private boolean flag = true;
@@ -81,7 +83,44 @@ class Thread_ticket03 implements Runnable{
         Thread.sleep(100);
         return sig;
     }
+}
 
-    
-    
+// 代码块加锁
+class Thread_ticket04 implements Runnable{
+    private int count = 30;
+    private boolean flag = true;
+    Object obj = new Object();
+    //同步机制,在任意时刻，只能有一个线程在卖票
+    // 注：不能在run方法前加synchronized，否则只能单线程卖票
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+
+        while (flag) {
+            try {
+                task();
+                
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            
+        }
+    }
+
+    public void task() throws InterruptedException{
+        // 可以是this也可以是其它对象，只要是同一个对象就ok
+        // synchronized(this){
+        synchronized(obj){
+            if(count==0){
+                // sig = 0;
+                flag = false;
+                System.out.println("售票结束，下次再来");
+                return;
+            }
+            System.out.println(Thread.currentThread().getName()+"卖出了一张票，还剩"+(--count)+"张票");
+            Thread.sleep(100);
+        }
+        
+    }
 }
