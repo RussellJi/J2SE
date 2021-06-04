@@ -14,9 +14,12 @@ public class ObjectInputSteamDemo {
         
         try {
             ois = new ObjectInputStream(new FileInputStream(filepath));
+
+            // 反序列化时要按顺序读取
             System.out.println(ois.readInt());
             System.out.println(ois.readBoolean());
             try {
+                // 向下转型
                 Dog dog = (Dog)ois.readObject();
                 System.out.println(dog);
             } catch (ClassNotFoundException e) {
