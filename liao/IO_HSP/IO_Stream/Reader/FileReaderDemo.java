@@ -19,7 +19,7 @@ public class FileReaderDemo {
         try {
             fr = new FileReader(filepath);
             while((readData = fr.read())!=-1){
-                System.out.println((char)fr.read());
+                System.out.println((char)readData);
             }
             
         } catch (IOException e) {
