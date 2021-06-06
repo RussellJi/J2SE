@@ -1,4 +1,4 @@
-package Net_HSP.socket.tcp.bytedemo;
+package Net_HSP.tcp.bytedemo;
 
 import java.io.IOException;
 import java.io.InputStream;

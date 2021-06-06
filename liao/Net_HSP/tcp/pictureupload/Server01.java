@@ -1,4 +1,4 @@
-package Net_HSP.socket.tcp.pictureupload;
+package Net_HSP.tcp.pictureupload;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
@@ -24,7 +24,7 @@ import java.net.Socket;
 public class Server01 {
     public static void main(String[] args) throws IOException {
 
-        String filepath = "Net_HSP\\socket\\tcp\\pictureupload\\nba.txt";
+        String filepath = "Net_HSP\\socket\\tcp\\pictureupload\\esp.txt";
         // 1.创建服务器，监听8888端口
         ServerSocket server = new ServerSocket(8888);
         System.out.println("服务器已开启："+server.toString());
@@ -43,8 +43,8 @@ public class Server01 {
         while((dataLen = is.read(bytes))!=-1){
             bos = new BufferedOutputStream(new FileOutputStream(filepath,true));
             String msg = new String(bytes,0,dataLen);
-            if(msg.equals("quit")){
-                System.out.println("客户端数据接受完毕");
+            if(msg.equals("发送完毕")){
+                System.out.println("客户端：文件上传成功！");
                 
                 break;
             }
@@ -53,7 +53,7 @@ public class Server01 {
             bos.close();
 
         }
-        bw.write("received nba.txt");
+        bw.write("接收文件成功");
         bw.newLine();
         bw.close();
         is.close();
