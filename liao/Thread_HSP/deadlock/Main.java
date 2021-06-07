@@ -6,8 +6,5 @@ public class Main {
         DeadLock d2 = new DeadLock(false);
         d2.start();
         d1.start();
-        
-        
-
     }
 }
