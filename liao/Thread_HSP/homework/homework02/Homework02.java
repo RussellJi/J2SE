@@ -20,20 +20,27 @@ public class Homework02 {
 
 class Card {
     public static int salary = 10000;
-    public static int getSalary(){
+    public static int setSalary(){
         
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            // try {
+            //     Thread.sleep(1000);
+            // } catch (InterruptedException e) {
+            //     // TODO Auto-generated catch block
+            //     e.printStackTrace();
+            // }
         synchronized(Card.class){
-            Card.salary-=1000;
-            
+            if(salary>=1000){
+                Card.salary-=1000;
+            }else{
+                System.out.println("余额不足");
+            }
             return Card.salary;
         }
     }
+    public static int getSalary(){
+        return salary;
+    }
+
 }
 
 class T1 extends Thread {
@@ -41,28 +48,35 @@ class T1 extends Thread {
     public void run() {
         // TODO Auto-generated method stub
         while(true){
-            if(Card.salary<1000){
-                System.out.println("余额不足");
+            // if(Card.getSalary()<1000){
+            //     System.out.println("余额不足");
+            //     break;
+            // }
+            int s = Card.setSalary();
+            System.out.println(Thread.currentThread().getName()+"取出了1000，还剩"+s);
+            if(s < 1000){
                 break;
             }
-            int s = Card.getSalary();
-            System.out.println(Thread.currentThread().getName()+"取出了1000，还剩"+s);
            
         }
     }
 }
+
 class T2 extends Thread {
     @Override
     public void run() {
         // TODO Auto-generated method stub
         while(true){
-            if(Card.salary<1000){
-                System.out.println("余额不足");
+            // if(Card.getSalary()<1000){
+            //     System.out.println("余额不足");
+            //     break;
+            // }
+            int s = Card.setSalary();
+            System.out.println(Thread.currentThread().getName()+"取出了1000，还剩"+s);
+            if(s < 1000){
+                System.out.println();
                 break;
             }
-            int s = Card.getSalary();
-            System.out.println(Thread.currentThread().getName()+"取出了1000，还剩"+s);
-            
         }
     }
 }

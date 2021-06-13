@@ -1,6 +1,5 @@
 package Thread_HSP.homework.homework01;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -26,7 +25,6 @@ class  T1 extends Thread{
     @Override
     public void run() {
         // TODO Auto-generated method stub
-        Random random = new Random();
         while (flag){
             // Math.random() 返回0,，1的double数
             int a = (int) (Math.random()*100);

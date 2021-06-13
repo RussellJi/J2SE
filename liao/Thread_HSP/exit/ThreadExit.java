@@ -1,18 +1,23 @@
 package Thread_HSP.exit;
 
+import java.util.Scanner;
+
 public class ThreadExit {
     public static void main(String[] args) {
         T1 t = new T1();
         t.start();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+
+        // 手动让线程退出，改变while(flag)
+        Scanner sc = new Scanner(System.in);
+        if(sc.nextLine().equals("quit")){
+            t.setFlag(false);
         }
-        t.setFlag(false);
+
+
+
     }
 }
+
 class T1 extends Thread {
     private boolean flag = true;
     @Override

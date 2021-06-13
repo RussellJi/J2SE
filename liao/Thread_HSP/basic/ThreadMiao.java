@@ -11,7 +11,7 @@ public class ThreadMiao extends Thread{
         System.out.println("子线程开始启动:"+Thread.currentThread().getName()); //Thread-0
 
         while(true){
-            if(count == 80){
+            if(count == 10){
                 return;
             }
             System.out.println("喵");
@@ -24,6 +24,5 @@ public class ThreadMiao extends Thread{
             
             count+=1;
         }
-
     }
 }
