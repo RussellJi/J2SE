@@ -13,11 +13,13 @@ import java.io.Serializable;
 *  */
 public class Msg implements Serializable {
     private MIME type;
+    private String source = null;
     private String destination = null;
     private String content = null;
     private long serialVersionUID = 1L;
 
-    public Msg(MIME type, String destination, String content) {
+    public Msg(String source,String destination, MIME type, String content) {
+        this.source = source;
         this.type = type;
         this.destination = destination;
         this.content = content;

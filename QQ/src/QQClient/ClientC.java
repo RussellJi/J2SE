@@ -12,11 +12,11 @@ public class ClientC {
         System.out.println("已连接服务器："+socket.toString());
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         //创建消息对象
-        Msg msg = new Msg(MIME.TXT,"1","hi");
+        Msg msg = new Msg("1","0",MIME.TXT,"hi");
         //创建对象输出流
         ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
         oos.writeObject(msg);
-        socket.shutdownOutput();
+//        socket.shutdownOutput();
 //        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 //        String sendline = null;
 //        String recvline = null;

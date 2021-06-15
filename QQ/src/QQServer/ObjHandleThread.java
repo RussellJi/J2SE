@@ -1,25 +1,26 @@
 package QQServer;
 
-import QQClient.MIME;
 import QQClient.Msg;
 
 import java.io.*;
 import java.net.Socket;
+
 import java.util.ArrayList;
 import java.util.Date;
 
+import static QQServer.QQServer.threadArray;
+
 public class ObjHandleThread extends Thread{
     //持有socket
-    private static Socket socket = null;
-    ArrayList<Thread> threadArray = null;
+    private Socket socket = null;
     Date date = new Date();
-    ObjHandleThread(Socket socket, ArrayList<Thread> threadArray){
-        ObjHandleThread.socket = socket;
-        this.threadArray = threadArray;
+    ObjHandleThread(Socket socket){
+        this.socket = socket;
+
     }
 
-    public static Socket getSocket() {
-        return socket;
+    public Socket getSocket() {
+        return this.socket;
     }
 
     @Override
@@ -27,10 +28,11 @@ public class ObjHandleThread extends Thread{
 
         ObjectInputStream ois = null;
         BufferedWriter bw = null;
-        Msg msg = null;
+        BufferedWriter bw2 = null;
+        Msg msg;
         try {
             ois = new ObjectInputStream(socket.getInputStream());
-            bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,11 +46,25 @@ public class ObjHandleThread extends Thread{
                     case TXT:
                         String data = msg.getContent();
                         if (msg.getDestination().equals("0")){
+                            //要给0号线程处理的客户端发送消息
+                            Socket destSocket = threadArray.get(0).getSocket();
+                            bw = new BufferedWriter(new OutputStreamWriter(destSocket.getOutputStream()));
+                            bw.write(data);
+                            bw.newLine();
+                            bw.flush();
+                            bw.close();
                             System.out.println(date.toString());
+
                             System.out.println("服务器：收到了发给0号客户端的消息，"+data);
 
                         }
                         if (msg.getDestination().equals("1")){
+                            Socket destSocket2 = threadArray.get(1).getSocket();
+                            bw2 = new BufferedWriter(new OutputStreamWriter(destSocket2.getOutputStream()));
+                            bw2.write(data);
+                            bw2.newLine();
+                            bw2.flush();
+                            bw2.close();
                             System.out.println(date.toString());
                             System.out.println("服务器：收到了发给1号客户端的消息，"+data);
 

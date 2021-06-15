@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 
 
 /**
@@ -20,7 +20,7 @@ import java.util.HashMap;
  *
  */
 public class QQServer {
-    static ArrayList<Thread> threadArray = new ArrayList<Thread>();
+    public volatile static ArrayList<Obj2HandleThread> threadArray = new ArrayList<>();
     public static void main(String[] args) throws IOException {
 //        开启服务器监听9999
         ServerSocket server = new ServerSocket(9999);
@@ -28,14 +28,16 @@ public class QQServer {
 //        创建一个线程集合
 
 //        HashMap<String,Thread> threadMap = new HashMap<String,Thread>();
-        Socket socket = null;
-
+        Socket socket;
+        Date date = new Date();
         while((socket = server.accept())!=null){
-
+            System.out.println(date.toString()+":");
+            System.out.println("客户端已连接："+socket.toString());
 //            HandlerThread thread = new HandlerThread(socket,threadArray);
-            ObjHandleThread thread = new ObjHandleThread(socket,threadArray);
+            Obj2HandleThread thread = new Obj2HandleThread(socket);
 //            threadMap.put("",thread);
             threadArray.add(thread);
+
             thread.start();
         }
 

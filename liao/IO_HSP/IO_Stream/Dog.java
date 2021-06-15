@@ -15,8 +15,7 @@ public class Dog implements Serializable{
     }
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "name:"+this.name+"  id:"+this.id+"  color:"+this.color+"  master:"+this.master;
+        return "name:"+this.name+"  id:"+this.id+"  color:"+this.color+"  master:"+Dog.master;
     }
 }
 

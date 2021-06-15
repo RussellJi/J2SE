@@ -1,43 +1,56 @@
 package QQClient;
 
-import java.io.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
+import java.util.Date;
 
-public class ClientC {
-    public static void main(String[] args) throws UnknownHostException, IOException {
-        Socket socket  = new Socket(InetAddress.getByName("127.0.0.1"),9999);
+import static QQServer.QQServer.threadArray;
+
+public class ClientD {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Socket socket  = null;
+        try {
+            socket = new Socket(InetAddress.getByName("127.0.0.1"),9999);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assert socket != null;
         System.out.println("已连接服务器："+socket.toString());
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         //创建消息对象
-        Msg msg = new Msg(MIME.TXT,"0","hi");
-        //创建对象输出流
-        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-        oos.writeObject(msg);
-        socket.shutdownOutput();
-//        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//        String sendline = null;
-//        String recvline = null;
-//        Scanner sc = new Scanner(System.in);
-//        while(true){
-//
-//            sendline = sc.nextLine();
-//            bw.write(sendline);
-//            bw.newLine();
-//            bw.flush();
-//            if(sendline.equals("quit")){
-//                System.out.println("客户端即将退出");
-//                break;
-//            }
-//            if((recvline = br.readLine())!=null){
-//                System.out.println(recvline);
-//            }
-//
-//        }
-        
-//        sc.close();
-        socket.close();
+//        Msg msg = new Msg("2","0",MIME.TXT,"hello ClientA");
+//        //创建对象输出流
+//        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+//        oos.writeObject(msg);
+//        socket.shutdownOutput();
+
+        //接收Msg对象并解析
+        //创建对象输入流
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(socket.getInputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Msg msg = null;
+        Date date = new Date();
+
+
+        //bug不能连续接收msg对象,会异常退出
+        try {
+            while((msg = (Msg) ois.readObject()) != null){
+                System.out.println(date.toString()+":");
+                System.out.println(msg.getContent());
+            }
+        } catch (ClassNotFoundException | EOFException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
