@@ -1,11 +1,10 @@
 package QQClient;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 /**
@@ -16,7 +15,7 @@ import java.util.Scanner;
  * 4.当客户端输入Q退出时，通知服务器无异常退出（服务器要关闭socket），同时关闭自己的socket并结束程序
  */
 
-public class ClientC {
+public class ClientC2 {
     public volatile static ArrayList<ObjHandleThread> threadArray = new ArrayList<>();
     public static void main(String[] args) throws UnknownHostException, IOException {
         Socket socket  = new Socket(InetAddress.getByName("127.0.0.1"),9999);

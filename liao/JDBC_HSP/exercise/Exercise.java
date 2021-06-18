@@ -41,9 +41,15 @@ public class Exercise {
         // 创建news表
         stmt.execute("create table if not exists news(id int NOT NULL PRIMARY KEY AUTO_INCREMENT, name varchar(20));");
         //插入5条记录
-        for(int i=0;i<5;i++){
-            stmt.executeUpdate("insert into news(name)values("+i+")");
-        }
+        // for(int i=0;i<5;i++){
+        //     stmt.executeUpdate("insert into news(name)values("+i+")");
+        // }
+
+        /**
+         * ResultSet源码解读：
+         * 数据在rowData中的rows中
+         *  第一行中的internalRowdata包含第一列id和第二列name,按ascii码存放
+         */
         ResultSet resultSet = stmt.executeQuery("select * from news");
         while(resultSet.next() == true){
             System.out.println("id:"+resultSet.getInt(1));

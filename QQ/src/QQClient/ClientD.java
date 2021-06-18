@@ -42,14 +42,14 @@ public class ClientD {
 
 
         //bug不能连续接收msg对象,会异常退出
-        try {
-            while((msg = (Msg) ois.readObject()) != null){
-                System.out.println(date.toString()+":");
-                System.out.println(msg.getContent());
-            }
-        } catch (ClassNotFoundException | EOFException e) {
-            e.printStackTrace();
+
+        while(true){
+            assert ois != null;
+            if ((msg = (Msg) ois.readObject()) == null) break;
+            System.out.println(date.toString()+":");
+            System.out.println(msg.getContent());
         }
+
 
 
     }

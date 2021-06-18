@@ -13,6 +13,11 @@ import java.io.Serializable;
 *  */
 public class Msg implements Serializable {
     private MIME type;
+
+    public String getSource() {
+        return source;
+    }
+
     private String source = null;
     private String destination = null;
     private String content = null;
