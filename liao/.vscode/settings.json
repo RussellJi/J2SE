@@ -3,6 +3,7 @@
         "lib/**/*.jar",
         "c:\\Users\\Administrator\\Downloads\\junit-platform-console-standalone-1.8.0-M1.jar",
         "f:\\Vscode\\lib\\junit-platform-console-standalone-1.8.0-M1.jar",
-        "libs/mysql-connector-java-5.1.37-bin.jar"
+        "libs/mysql-connector-java-5.1.37-bin.jar",
+        "libs/c3p0-0.9.1.2.jar"
     ]
 }
