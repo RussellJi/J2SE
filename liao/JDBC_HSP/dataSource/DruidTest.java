@@ -17,12 +17,12 @@ public class DruidTest {
         props.load(new FileInputStream("F:\\Vscode\\JavaProject\\J2SE\\liao\\JDBC_HSP\\dataSource\\druid.properties"));
         DataSource ds = DruidDataSourceFactory.createDataSource(props);
         long startTime = System.currentTimeMillis();
-        for(int i=0; i<5000; i++){
+        for(int i=0; i<500000; i++){
             Connection conn = ds.getConnection();
             // System.out.println("连接ok");
             conn.close();
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("druid 连接5000次 耗时:"+(endTime - startTime));
+        System.out.println("druid 连接500000次 耗时:"+(endTime - startTime));
     }
 }

@@ -14,6 +14,7 @@ import java.util.Properties;
  * 1.创建连接
  * 3.释放资源,关闭连接
  */
+
 public class JDBCUtil {
     static Properties props;
     static String driver;

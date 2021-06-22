@@ -14,12 +14,12 @@ public class C3p0Test {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource("jhh_DS");
         System.out.println("开始执行...");
         long start = System.currentTimeMillis();
-        for(int i = 0; i<5000; i++){
+        for(int i = 0; i<500000; i++){
             Connection conn = comboPooledDataSource.getConnection();
             // System.out.println("连接ok");
             conn.close();
         }
         long end = System.currentTimeMillis();
-        System.out.println("c3p0连接mysql5000 耗时："+(end - start));
+        System.out.println("c3p0连接mysql500000 耗时："+(end - start));
     }
 }
