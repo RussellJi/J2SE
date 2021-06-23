@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user number="1">
+        <id>123</id>
+        <name>纪浩瀚</name>
+        <age>23</age>
+    </user>
+    <user number="2">
+        <id>124</id>
+        <name>张书嫚</name>
+        <age>24</age>
+    </user>
+</users>

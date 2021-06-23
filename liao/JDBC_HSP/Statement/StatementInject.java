@@ -14,11 +14,8 @@ import java.util.Scanner;
 import org.junit.Test;
 
 public class StatementInject {
-    public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, IOException, SQLException {
-        statementInject();
-    }
     @Test
-    public static void statementInject() throws ClassNotFoundException, FileNotFoundException, IOException, SQLException{
+    public void statementInject() throws ClassNotFoundException, FileNotFoundException, IOException, SQLException{
         Properties props = new Properties();
         props.load(new FileReader("F:\\Vscode\\JavaProject\\J2SE\\liao\\JDBC_HSP\\Statement\\props.properties"));
         String driver = props.getProperty("driver");

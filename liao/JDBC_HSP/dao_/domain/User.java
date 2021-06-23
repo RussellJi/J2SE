@@ -1,4 +1,4 @@
-package JDBC_HSP.JDBCUtils;
+package JDBC_HSP.dao_.domain;
 
 public class User {
     private String name;
